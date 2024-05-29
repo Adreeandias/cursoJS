@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body {
+            font: normal 1em Arial;
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sua Nacionalidade</h1>
+
+    <p>Se você vive no <input type="text" name="pais" id="ipais" value="Brasil"><input type="button" value="Analisar" onclick="clicar()"></p>
+    <div id="res"></div>
+
+    <script>
+        function clicar() {
+        var pais = window.document.querySelsector('input#ipais')
+        var res = window.document.querySelector('div#res')
+        var p = (pais.value)
+        res.innerHTML= `<p>Seu pais é ${p}</p>`
+    
+        if (p == 'Brasil') {
+            res.innerHTML = `<p>Vivendo em ${p} Você é um Estrangeiro</p>`
+        } 
+    }
+    </script>
+    
+
+
+</body>
+</html>
