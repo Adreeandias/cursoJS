@@ -14,19 +14,30 @@
 <body>
     <h1>Sua Nacionalidade</h1>
 
-    <p>Se você vive no <input type="text" name="pais" id="ipais" value="Brasil"><input type="button" value="Analisar" onclick="clicar()"></p>
+    <p><label for="ipais">Se você vive no(a)</label> 
+        <input type="text" name="pais" id="ipais" value="Brasil" list="listpais">
+        <datalist id="listpais">
+            <option >Brasil</option>
+            <option >França</option>
+            <option >Argentina</option>
+            <option >Alemanha</option>
+        </datalist>
+        <input type="button" value="Analisar" onclick="clicar()">
+    </p>
     <div id="res"></div>
 
     <script>
         function clicar() {
-        var pais = window.document.querySelsector('input#ipais')
+        var pais = window.document.querySelector('input#ipais')
         var res = window.document.querySelector('div#res')
         var p = (pais.value)
-        res.innerHTML= `<p>Seu pais é ${p}</p>`
+        res.innerHTML = `<p>Seu pais é ${p}</p>`
     
-        if (p == 'Brasil') {
-            res.innerHTML = `<p>Vivendo em ${p} Você é um Estrangeiro</p>`
-        } 
+        if (p != 'Brasil') {
+            res.innerHTML += `<p>Vivendo em ${p} Você é um Estrangeiro!</p>`
+        } else {
+            res.innerHTML += `<p>Vivendo em ${p} você é um Brasileiro!</p>`
+        }
     }
     </script>
     
